@@ -21,8 +21,8 @@ warnings.filterwarnings('ignore')
 
 # CONEXION A DATOS -------------------------------------------------------------------------------------------------------------
 
-dsn_tns = oracle.makedsn('10.60.4.165', '1530', service_name='OBI500')
-conn = oracle.connect(user='CONS_MANUFACTURA', password='Orbis2021*', dsn=dsn_tns)
+dsn_tns = oracle.makedsn('******', '******', service_name='OBI500')
+conn = oracle.connect(user='*********', password='********', dsn=dsn_tns)
 c = conn.cursor()
 
 query="""SELECT NUMERO_SOLICITUD,
@@ -475,7 +475,7 @@ if quejas.shape[0] != 0:
 
                 try:
                     correo_propietario = correos[correos.NOMBRE == propietario].CORREO.tolist()[0]
-                    enviar_correo(correo_propietario='ana.morales@andercol.com.co; pilar.mejia@andercol.com.co', asunto=asunto, body=body)
+                    enviar_correo(correo_propietario='******', asunto=asunto, body=body)
                 except:
                     print(f"Falta el correo de {propietario} en la Base de Datos\nNo se le envió el informe esta vez, por favor agréguelo.")
                     continue
